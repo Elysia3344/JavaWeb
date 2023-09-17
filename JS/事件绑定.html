@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+<input type="button" id="btn1" value="事件绑定1" onclick="on()">
+<!-- 这个on的()相当于是一个函数的部分，不可省略的 -->
+<input type="button" id="btn2" value="事件绑定2">
+    <script>
+  function on() {
+    alert("按钮1被点击了...");
+  }
+
+//   根本是onclick起的作用，on只是个名字而已，如果已经能够直接识别到该位置
+//   直接写个onclick就好了
+  document.getElementById("btn2").onclick=function()
+  {
+    alert("按钮2被点击了...");
+  }
+
+    </script>
+</body>
+</html>

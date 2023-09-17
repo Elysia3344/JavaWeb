@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+// var str=new String("     Hello String      ");
+var str="          Hello String              ";
+
+console.log(str);
+console.log(str.length);
+console.log(str.charAt(4));
+//返回指定位置的字符
+console.log(str.indexOf("lo"));
+//这里检索的是字符串，是指到这个位置，前面是
+//一个字母一个位置，但这个lo是一个整体!表示知道了lo这个位置就停止了！
+
+var s=str.trim();//删除字符串的空格
+console.log(s);
+
+//substring(start,end) --- 开始索引，结束索引 (含头不含尾)
+console.log(s.substring(0,5));
+
+    </script>
+</body>
+</html>

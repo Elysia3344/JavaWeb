@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app" >
+
+        <!-- <input type="button" value="点我一下" v-on:click="handle()"> -->
+        <!-- 简写 -->
+        <input type="button" value="点我一下" @click="handle()">
+    </div>
+</body>
+   
+ <script>
+new Vue({//这里一定是要大写！
+    el:"#app", //vue接管区域
+    data:{
+       
+},
+methods: {//放入函数
+    handle:function()
+    {
+        alert("你点了我一下....");
+    }
+}
+})
+    </script>
+
+</html>

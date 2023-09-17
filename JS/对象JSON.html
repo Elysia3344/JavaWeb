@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+        //记住，JSon中都是:而不是“=”！
+        //自定义对象
+var user ={//自定义对象中，用的是"，"而不是";"!
+    name:"Tom",
+    age:10,
+    gender:"male",
+    eat:function(){
+        alert("用膳~");
+        //函数里仍然使用;
+    }
+}
+alert(user.name);
+user.eat();
+
+//定义json
+var jsonstr='{"name":"Tom","age":18,"addr":["北京","上海","西安"]}';
+alert(jsonstr.name);
+//因为此时jsonstr还是字符串，所以输出为underfied
+
+//json字符串--js对象
+var obj=JSON.parse(jsonstr);
+alert(obj.name);
+
+//js对象--json字符串
+alert(JSON.stringify(obj));
+
+    </script>
+</body>
+</html>

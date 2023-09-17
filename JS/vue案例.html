@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app" >
+        <table border ="1" cellspacing="0" width="60%">
+        <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>成绩</th>
+        <th>等级</th>
+        </tr>
+
+        <tr align="center" v-for="(user,index) in users">
+           <!-- 是元素不是数组，第一个是你自己取的名字，是一个元素的命名！ -->                       
+        <td>{{index+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>
+        <span v-if="user.gender==1">男</span>
+        <span v-if="user.gender==2">女</span>
+       <!-- 区别于以上，因为男女性别需要判断，所以需要一个判断标签
+       来显示，所以用span。 -->
+        </td>
+        <td>{{user.score}}</td>
+        <td>
+        <span v-if="user.score>=85">优秀</span>
+        <span v-else-if="user.score>=60">及格</span>
+      <span style="color: red;" v-else>不及格</span>
+        </td>
+        </tr>
+
+        </table>
+    </div>
+</body>
+   
+ <script>
+new Vue({//这里一定是要大写！
+    el:"#app", //vue接管区域
+data:{
+    users:[
+    {name: "Tom",
+age: 20,
+gender: 1,
+score: 78},
+{name:"Rose",
+age: 18,
+gender: 2,
+score: 86},
+{
+name:"jerry",
+age: 26,
+gender: 1,
+score: 90
+}]
+
+}
+ 
+})
+    </script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body onload="load()">
+  <!-- 某个页面加载完后会触发这个事件 -->
+<!-- body加载完后就会自动触发这个方法 -->
+
+<!-- 表单，用于框住按钮文本框这些统一一起 -->
+<form action="" style="text-align: center;" onsubmit="subfn()">
+  <input type="button" id="b1" value="单击事件" onclick="fn1()" >
+  <!-- 关于点击的操作的，不需要自行输入导入数据的用value命名. -->
+  <input type="text" name="username" onblur="bfn()" onfocus="ffn()" onkeydown="kfn()">
+  <input type="submit" value="提交" id="b1">
+ </form>
+ <br><br><br>
+
+<table width="800px" border="1" cellspacing="0" align="center" onmouseover="over()" onmouseout="out()">
+  <tr>
+  <th>学号</th>
+  <th>姓名</th>
+  <th>分数</th>
+  <th>评语</th>
+  </tr>
+  <tr align="center">
+    <td>001</td>
+    <td>张三</td>
+    <td>90</td>
+    <td>很优秀</td>
+  </tr>
+  <tr align="center">
+    <td>002</td>
+    <td>李四</td>
+    <td>92</td>
+    <td>优秀</td>
+  </tr>
+  </table>
+    <script>
+ function load()
+ {
+  console.log("界面加载完成...");
+ }
+
+ function fn1() {
+  console.log("我被点击了...") ;
+ }
+
+ function bfn() {
+  console.log("失去焦点...") ;
+ }
+
+
+ function ffn() {
+  console.log("获得焦点...") ;
+ }
+
+ function kfn() { 
+  console.log("键盘被按下了...") ;
+ }
+
+ //onmouseover: 鼠标移动到元素之上
+ function over(){
+  console.log("鼠标移入了...")
+ }
+
+//onmouseout: 鼠标移出某元素
+function out(){
+console.log("鼠标移出了...")
+}
+
+//onsubmit: 提交表单事件
+function subfn(){
+  // console.log("表单被提交了...") ;err
+  alert("表单被提交了...");
+}
+//表单被提交了就会再加载一次，也就是不能再直接在控制板显示了
+//而是直接在警告栏里
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <img id="light" src="./img/屏幕截图 2023-09-11 172414.png"><br>
+   
+    <input type="button" value="酝酿" onclick="off()">
+     <input type="button" value="变脸" onclick="on()">
+    <!-- value就相当于是初始值的意思 -->
+    <br> <br>
+
+    <input type="text" id="name" value="ITCAST" onfocus="lower()" onblur="upper()">
+    <br> <br>
+
+    <input type="checkbox" name="hobby"> 电影
+    <input type="checkbox" name="hobby">旅游
+    <input type="checkbox" name="hobby"> 游戏 
+    <br>
+
+    <input type="button" value="全选" onclick="checkAll()">
+    <input type="button" value="反选" onclick="reverse()">
+    <script>
+    function on() {
+        var img=document.getElementById("light");
+        img.src="./img/屏幕截图 2023-09-11 172529.png";
+    }
+
+    function off() {
+        var img=document.getElementById("light");
+        img.src="./img/屏幕截图 2023-09-11 172414.png";
+    }
+
+    function lower() {
+        var input=document.getElementById("name");
+
+        input.value=input.value.toLowerCase();
+       
+    }
+
+    function upper() {
+        var input=document.getElementById("name");
+
+        input.value=input.value.toUpperCase();
+       
+    }
+
+    //这里的所有元素都不是另起内存成为全新的变量的，全都是相当于指针的用法！
+
+    function checkAll() {
+
+        var hobbys=document.getElementsByName("hobby");
+
+        for (let i = 0; i < hobbys.length; i++) {
+            const element = hobbys[i];
+            element.checked=true;
+            
+        }
+        
+    }
+
+    
+    function reverse() {
+
+var hobbys=document.getElementsByName("hobby");
+
+for (let i = 0; i < hobbys.length; i++) {
+    const element = hobbys[i];
+    element.checked=false;
+    
+}
+
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+<!-- vue跟JS不一样了,vue是两个部分，所以body和script是分开的而不是嵌套式的！ -->
+<!-- 原理就是实现数据的互相交流，分为两个板块可互动，传递数据，实现双向流通，绑定
+所以代码是互相牵连的。 -->
+<!-- 在<script>中是搭建模型，而div就是将数据的呈现 -->
+<body>
+    <div id="app" >
+        <!-- 这里直接写app就行了不写# -->
+<input type="text" v-model="message">
+<!-- {(message)} err -->
+{{message}}
+<!-- 是双大括号不是一个大一个小！ -->
+    </div>
+</body>
+   
+ <script>
+new Vue({//这里一定是要大写！
+    el:"#app", //vue接管区域
+    data:{
+        message:"Hello Vue"
+    }//这是vue的数据模型，用于存放数据
+})
+    </script>
+
+</html>

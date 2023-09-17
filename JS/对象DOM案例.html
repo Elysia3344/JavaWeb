@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <img id="hl" src="./img/屏幕截图 2023-09-11 172414.png"><br><br>
+<div class="cls">传智教育</div><br>
+<div class="cls">黑马程序员</div><br>
+<input type="checkbox" name="hobby"> 电影
+<input type="checkbox" name="hobby">旅游
+<input type="checkbox" name="hobby"> 游戏
+    <script>
+   //与程序不同的是，这里是共用同一个网站。
+   //可以反复定义也是这个道理，也就是说只要还是这个img这个变量
+   //那该改变的还是要改变。
+   //这里是使用了id这个牵引，这个id就相当于指针，直接指向了这个图片标签的地点！
+   //element 元素
+
+   //切换表情：src属性值
+   var img =document.getElementById('hl');
+   img.src="./img/屏幕截图 2023-09-11 172529.png";
+
+   //2，将所有div标签的内容后面加上: very good (红色字体) -- <font color='red'></font>
+var divs=document.getElementsByTagName("div");
+for (let i = 0; i < divs.length; i++) {
+    const div = divs[i];
+    //先输入文本：very good,后再加入标签
+    div.innerHTML+="<font color='red'>very good</font>";
+    
+}
+//3.使所有的复选框呈现选中状态
+var ins=document.getElementsByName("hobby");
+for (let i = 0; i < ins.length; i++) {
+    const check = ins[i];
+    check.checked=true;
+
+    
+}
+    </script>
+</body>
+</html>

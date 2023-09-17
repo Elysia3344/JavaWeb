@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app" >
+
+        <a v-bind:href="url">链接1</a>
+        <a :href="url">链接2</a>
+        <!-- bind是绑定的意思 -->
+        <!-- 可省略 -->
+        <input type="text" v-model="url">
+        <!-- v-model可以双向绑定，起到改变链接的地址的作用 -->
+    </div>
+</body>
+   
+ <script>
+new Vue({//这里一定是要大写！
+    el:"#app", //vue接管区域
+    data:{
+        url:"https://www.baidu.com/?tn=44004473_2_oem_dg"
+    }//这是vue的数据模型，用于存放数据
+})
+    </script>
+
+</html>
